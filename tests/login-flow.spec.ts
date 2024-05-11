@@ -16,7 +16,7 @@ test('when accessing the profile page unautentificated then redirect to login an
 
     await page.goto('http://localhost:3000/pages/login');
   
-    await page.getByLabel('User name').fill('admin@gmail.com');
+    await page.getByLabel('Email').fill('admin@gmail.com');
     await page.getByLabel('Password').fill('Password@123');
     await page.getByRole('button', { name: 'Login' }).click();
     
