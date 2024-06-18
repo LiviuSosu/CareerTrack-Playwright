@@ -1,13 +1,10 @@
 import { test, expect } from '@playwright/test';
-import 'dotenv/config'
+import {ProfilePageUrl} from './helpers';
 
 //TODO: pull the url in a config file
 test('when succesfull login the profile page is displayed', async ({ page }) => {
-    const apiUrl = process.env.NEXT_PUBLIC_API_URL;
-    console.log(process.env) 
-    console.log("aici vine numele mediului: "+apiUrl)
 
-    await page.goto('http://localhost:3000/pages/profile');
+    await page.goto(ProfilePageUrl);
     await page.waitForURL('http://localhost:3000/pages/login');
     await expect(page.getByRole('button', { name: 'Login' })).toBeVisible();
 
@@ -21,7 +18,7 @@ test('when succesfull login the profile page is displayed', async ({ page }) => 
 
     await expect(page.getByRole('paragraph')).toContainText("home Page");
 
-    await page.goto('http://localhost:3000/pages/profile');
+    await page.goto(ProfilePageUrl);
 
     await expect(page.getByRole('heading')).toContainText("profile Page");
 
