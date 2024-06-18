@@ -29,7 +29,10 @@ test('when succesfull login the profile page is displayed', async ({ page }) => 
   await expect(page.getByRole('heading')).toContainText("profile Page");
 
   await page.goto('http://localhost:3000/pages/user-management');
-  await expect(page.getByRole('paragraph')).toContainText("users management3");
+  await expect(page.getByRole('paragraph')).toContainText("loading...");
+
+  await page.waitForURL('http://localhost:3000/pages/user-management');
+  await expect(page.getByRole('table')).toBeVisible();
 
   // await page.getByRole('link', { name: 'logout' }).click();
 
