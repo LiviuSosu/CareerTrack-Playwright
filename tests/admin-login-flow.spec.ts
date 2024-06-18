@@ -1,7 +1,8 @@
 import { test, expect } from '@playwright/test';
+import { ProfilePageUrl, LoginPageUrl, HomePageUrl, UserManagementUrl } from './helpers';
 
 test('when accessing the profile page unautentificated then redirect to login and to find the Login button', async ({ page }) => {
-  await page.goto('http://localhost:3000/pages/profile');
+  await page.goto(ProfilePageUrl);
 
   let loginButton = await page.getByRole('button', { name: 'Login' });
 
@@ -10,28 +11,28 @@ test('when accessing the profile page unautentificated then redirect to login an
 
 test('when succesfull login the profile page is displayed', async ({ page }) => {
 
-  await page.goto('http://localhost:3000/pages/profile');
-  await page.waitForURL('http://localhost:3000/pages/login');
+  await page.goto(ProfilePageUrl);
+  await page.waitForURL(LoginPageUrl);
   await expect(page.getByRole('button', { name: 'Login' })).toBeVisible();
 
-  await page.goto('http://localhost:3000/pages/login');
+  await page.goto(LoginPageUrl);
 
   await page.getByLabel('Email').fill('admin@gmail.com');
   await page.getByLabel('Password').fill('Password@123');
   await page.getByRole('button', { name: 'Login' }).click();
 
-  await page.waitForURL('http://localhost:3000/pages/home');
+  await page.waitForURL(HomePageUrl);
 
   await expect(page.getByRole('paragraph')).toContainText("home Page");
 
-  await page.goto('http://localhost:3000/pages/profile');
+  await page.goto(ProfilePageUrl);
 
   await expect(page.getByRole('heading')).toContainText("profile Page");
 
-  await page.goto('http://localhost:3000/pages/user-management');
+  await page.goto(UserManagementUrl);
   await expect(page.getByRole('paragraph')).toContainText("loading...");
 
-  await page.waitForURL('http://localhost:3000/pages/user-management');
+  await page.waitForURL(UserManagementUrl);
   await expect(page.getByRole('table')).toBeVisible();
 
   // await page.getByRole('link', { name: 'logout' }).click();
