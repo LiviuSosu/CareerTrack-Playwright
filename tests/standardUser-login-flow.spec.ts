@@ -1,7 +1,6 @@
 import { test, expect } from '@playwright/test';
 import { ProfilePageUrl, LoginPageUrl, HomePageUrl, UserManagementUrl } from './helpers';
 
-//TODO: pull the url in a config file
 test('when succesfull login the profile page is displayed', async ({ page }) => {
 
     await page.goto(ProfilePageUrl);

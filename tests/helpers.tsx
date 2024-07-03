@@ -6,3 +6,4 @@ export const ProfilePageUrl = apiUrl + 'profile';
 export const LoginPageUrl = apiUrl + 'login';
 export const HomePageUrl = apiUrl + 'home';
 export const UserManagementUrl = apiUrl + 'user-management';
+export const PrivacyPolicyUrl = apiUrl + 'privacy-policy';
