@@ -23,5 +23,4 @@ test('when succesfull login the profile page is displayed', async ({ page }) => 
 
     await page.goto(UserManagementUrl);
     await expect(page.getByRole('button', { name: 'Login' })).toBeVisible()
-
 })
