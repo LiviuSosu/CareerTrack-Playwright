@@ -8,7 +8,8 @@ test('when the "here" link from the cookies banner is clicked it is redirected t
     await page.getByText('here').click();
 
     await page.waitForURL(PrivacyPolicyUrl);
-    await expect(page.getByText('Cookie management overview')).toBeVisible();
+    //await expect(page.getByText('CAREER TRACK PRIVACY POLICY')).toBeVisible();
+    await expect(page.getByRole('heading', { name: 'CAREER TRACK PRIVACY POLICY' })).toBeVisible();
 })
 
 test('when the "Consent" button is being clicked the banner dissapears', async ({ page }) => {
