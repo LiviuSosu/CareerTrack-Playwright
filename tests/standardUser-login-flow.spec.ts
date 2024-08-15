@@ -15,7 +15,7 @@ test('when succesfull login the profile page is displayed', async ({ page }) => 
 
     await page.waitForURL(HomePageUrl);
 
-    await expect(page.getByRole('paragraph')).toContainText("home Page");
+    await expect(page.getByRole('paragraph')).toContainText("home page");
 
     await page.goto(ProfilePageUrl);
 
