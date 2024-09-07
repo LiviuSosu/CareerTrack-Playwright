@@ -6,8 +6,8 @@ if (apiUrl == null) {
     throw new Error('Api url is not being set.');
 }
 
-export const ProfilePageUrl = apiUrl + 'profile';
-export const LoginPageUrl = apiUrl + 'login';
+export const ProfilePageUrl = apiUrl + 'account/profile';
+export const LoginPageUrl = apiUrl + 'account/login';
 export const HomePageUrl = apiUrl;
 export const UserManagementUrl = apiUrl + 'user-management';
 export const PrivacyPolicyUrl = apiUrl + 'legal/privacy-policy';
