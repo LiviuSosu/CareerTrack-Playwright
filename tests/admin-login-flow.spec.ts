@@ -34,9 +34,4 @@ test('when succesfull login the profile page is displayed', async ({ page }) => 
 
   await page.waitForURL(UserManagementUrl);
   await expect(page.getByRole('table')).toBeVisible();
-
-  // await page.getByRole('link', { name: 'logout' }).click();
-
-  // await page.waitForURL('http://localhost:3000/pages/home');
-  //
 });
