@@ -1,8 +1,7 @@
 import { test, expect } from '@playwright/test';
-import { ProfilePageUrl, AccountProfileMe, AccountProfileChnagePassword, LoginPageUrl, HomePageUrl } from '../../helpers';
+import { ProfilePageUrl, LoginPageUrl, HomePageUrl } from '../../utils/urls';
 
 test('navigation words', async ({ page }) => {
-
     await page.goto(LoginPageUrl);
 
     await page.getByLabel('Email').fill('admin@gmail.com');
@@ -13,9 +12,10 @@ test('navigation words', async ({ page }) => {
   
     await expect(page.getByRole('paragraph')).toContainText("home page");
 
-
     await page.goto(ProfilePageUrl);
 
-    const locator = await page.getByTestId("profileMeLink") //get('profileMeLink');
-    await expect(locator).toHaveClass('nav-link active');
+    const locatorProfileMe = await page.getByTestId("profileMeNavigationItem");
+    await expect(locatorProfileMe).toHaveClass('nav-link active');
+    const locatorChangePassword = await page.getByTestId("changePasswordNavigationItem");
+    await expect(locatorChangePassword).toHaveClass('nav-link link-dark');
 })

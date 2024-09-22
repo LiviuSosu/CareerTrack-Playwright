@@ -1,5 +1,5 @@
 import { test, expect } from '@playwright/test';
-import { ProfilePageUrl, LoginPageUrl, HomePageUrl, UserManagementUrl } from './helpers';
+import { ProfilePageUrl, LoginPageUrl, HomePageUrl, UserManagementUrl } from './utils/urls';
 
 test('when accessing the profile page unautentificated then redirect to login and to find the Login button', async ({ page }) => {
   await page.goto(ProfilePageUrl);

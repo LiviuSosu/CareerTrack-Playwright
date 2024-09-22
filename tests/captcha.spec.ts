@@ -1,5 +1,5 @@
 import { test, expect } from '@playwright/test';
-import { LoginPageUrl } from './helpers';
+import { LoginPageUrl } from './utils/urls';
 
 test('when login fails 5 times in a row, captcha button is being shown', async ({ page }) => {
     await page.goto(LoginPageUrl);

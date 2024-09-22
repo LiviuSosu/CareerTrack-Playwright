@@ -1,5 +1,5 @@
 import { test, expect } from '@playwright/test';
-import { CookiePolicyUrl } from '../helpers';
+import { CookiePolicyUrl } from '../utils/urls';
 
 test('Cookie policy displays the correct content', async ({ page }) => {
     await page.goto(CookiePolicyUrl);

@@ -1,5 +1,5 @@
 import { test, expect } from '@playwright/test';
-import { ProfilePageUrl, LoginPageUrl, HomePageUrl, UserManagementUrl } from './helpers';
+import { ProfilePageUrl, LoginPageUrl, HomePageUrl, UserManagementUrl } from './utils/urls';
 
 test('when succesfull login the profile page is displayed', async ({ page }) => {
 

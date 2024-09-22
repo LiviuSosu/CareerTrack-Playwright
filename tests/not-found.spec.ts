@@ -1,5 +1,5 @@
 import { test, expect } from '@playwright/test';
-import { NotFoundPageUrl, HomePageUrl } from './helpers';
+import { NotFoundPageUrl, HomePageUrl } from './utils/urls';
 
 test('when unknown route is being accessed (page not found) it redirects to home page', async ({ page }) => {
     await page.goto(NotFoundPageUrl);

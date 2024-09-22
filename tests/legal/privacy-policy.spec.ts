@@ -1,5 +1,5 @@
 import { test, expect } from '@playwright/test';
-import { HomePageUrl, PrivacyPolicyUrl } from '../helpers';
+import { HomePageUrl, PrivacyPolicyUrl } from '../utils/urls';
 
 test('when the "here" link from the cookies banner is clicked it is redirected to /privacy-policy', async ({ page }) => {
     await page.goto(HomePageUrl);

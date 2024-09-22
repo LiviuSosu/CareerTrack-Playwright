@@ -1,5 +1,5 @@
 import { test, expect } from '@playwright/test';
-import { TermsOfUseUrl } from '../helpers';
+import { TermsOfUseUrl } from '../utils/urls';
 
 test('Terms of use displays the correct content', async ({ page }) => {
     await page.goto(TermsOfUseUrl);
